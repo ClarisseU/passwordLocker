@@ -33,6 +33,12 @@ def delete_user(username):
     '''
     username.delete_user()  
     
+def delete_cred(username):
+    '''
+    function to delete a credential
+    '''
+    username.delete_cred()    
+    
 def find_user(email):
     '''
     function that finds a user by email and returns the username
