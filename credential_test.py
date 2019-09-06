@@ -71,11 +71,14 @@ class TestCred(unittest.TestCase):
         tests if the user exists method
         '''
         self.new_cred.save_cred()
-        # test_user = User('Test','user','user@gmail.com') 
-        # test_user.save_user()
-        # print(User.user_list[1].username)
         cred_exists = Credentials.cred_exist('Klarys')
-        self.assertTrue(cred_exists)         
+        self.assertTrue(cred_exists) 
+        
+    def test_display_all_creds(self):
+        '''
+        method that returns a list of all users saved
+        '''
+        self.assertEqual(Credentials.display_creds(),Credentials.cred_list)            
         
    
             
