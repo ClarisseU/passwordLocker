@@ -50,4 +50,10 @@ def find_cred(username):
     function to find a credential
     '''
     return Credentials.find_by_username(username)
+
+def check_existing_user(username):
+    '''
+    function to check if the user exists
+    '''
+    return User.user_exist(username)
       
