@@ -64,7 +64,18 @@ class TestCred(unittest.TestCase):
         test_cred.save_cred()
         found_cred = Credentials.find_by_username('user')
         print(Credentials.cred_list)
-        self.assertEqual(found_cred.email,test_cred.email)     
+        self.assertEqual(found_cred.email,test_cred.email)
+        
+    def test_cred_exist(self):
+        '''
+        tests if the user exists method
+        '''
+        self.new_cred.save_cred()
+        # test_user = User('Test','user','user@gmail.com') 
+        # test_user.save_user()
+        # print(User.user_list[1].username)
+        cred_exists = Credentials.cred_exist('Klarys')
+        self.assertTrue(cred_exists)         
         
    
             
