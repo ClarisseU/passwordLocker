@@ -20,6 +20,12 @@ class TestCred(unittest.TestCase):
         self.assertEqual(self.new_cred.password,'python3')
         self.assertEqual(self.new_cred.email,'clarisseum@gmai.com')
         
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        Credentials.cred_list = []
+        
     def test_save_cred(self):
         '''
         this is a test to check if the account is saved
@@ -27,6 +33,15 @@ class TestCred(unittest.TestCase):
         
         self.new_cred.save_cred()
         self.assertEqual(len(Credentials.cred_list),1)
+        
+    def multi_user_test(self):
+        '''
+        the method is to test if we can save multiple credential objects to our credential list
+        '''
+        self.new_cred.save_cred()
+        test_cred = Credentials ('Instagram','Klarys','python3','clarisseum@gmai.com')
+        test_cred.save_cred()
+        self.assertEqual(len(Credentials.cred_list),2)  
         
    
             
