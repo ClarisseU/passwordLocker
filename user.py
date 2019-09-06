@@ -11,17 +11,8 @@ class User:
         self.password = password
         self.email = email
     
-    
-class Credentials:
-    '''
-    This class is going to hold information about the credentials
-    '''
-    cred_list = []
-    def __init__(self,socialMed,username,password,email):
+    def save_user(self):
         '''
-        will hold the properties for our objects
-        '''    
-        self.socialMed = socialMed
-        self.username = username
-        self.password = password
-        self.email = email
+        this method saves user objects into the user_list
+        '''
+        User.user_list.append(self)
