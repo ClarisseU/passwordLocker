@@ -21,6 +21,12 @@ def save_user(username):
     '''
     username.save_user()
     
+def save_cred(username):
+    '''
+    function to save a created credential
+    '''
+    username.save_cred    
+    
 def delete_user(username):
     '''
     function to remove a username
