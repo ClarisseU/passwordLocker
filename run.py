@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from user import User
 from credentials import Credentials  
   
@@ -62,6 +63,12 @@ def check_existing_cred(username):
     function to chexk the existing credentials
     '''
     return Credentials.cred_exist(username)
+
+def display_users():
+    '''
+    function that displays all the saved users
+    '''
+    return User.display_users()
 
 
       
