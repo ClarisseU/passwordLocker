@@ -34,7 +34,7 @@ class TestCred(unittest.TestCase):
         self.new_cred.save_cred()
         self.assertEqual(len(Credentials.cred_list),1)
         
-    def multi_user_test(self):
+    def test_multi_user(self):
         '''
         the method is to test if we can save multiple credential objects to our credential list
         '''
@@ -43,7 +43,7 @@ class TestCred(unittest.TestCase):
         test_cred.save_cred()
         self.assertEqual(len(Credentials.cred_list),2) 
         
-    def delete_cred_test(self):
+    def test_delete_cred(self):
         '''
         the method tests if we can remove a credential from our credential list
         '''
@@ -52,10 +52,22 @@ class TestCred(unittest.TestCase):
         test_cred.save_cred()
         
         self.new_cred.delete_cred()
-        self.assertEqual(len(Credentials.cred_list),1)  
+        self.assertEqual(len(Credentials.cred_list),1)
+        
+    def test_find_by_username(self):
+        '''
+        test to check if we can find a user byt username and display information
+        '''
+        
+        self.new_cred.save_cred()
+        test_cred = Credentials ('Test','user','password','user@gmail.com')
+        test_cred.save_cred()
+        found_cred = Credentials.find_by_username('user')
+        print(Credentials.cred_list)
+        self.assertEqual(found_cred.email,test_cred.email)     
         
    
             
         
 if __name__ == '__main__':
-    unittest.main()        
+    unittest.main()     
