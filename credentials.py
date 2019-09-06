@@ -23,4 +23,13 @@ class Credentials:
         '''
         the method helps to delete a user from the user list
         '''
-        Credentials.cred_list.remove(self)   
+        Credentials.cred_list.remove(self)
+        
+    @classmethod
+    def find_by_username(cls,username):
+        '''
+        helps find a username
+        '''
+        for cred in cls.cred_list:
+            if cred.username == username:
+                return cred       
