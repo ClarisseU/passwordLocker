@@ -41,7 +41,18 @@ class TestCred(unittest.TestCase):
         self.new_cred.save_cred()
         test_cred = Credentials ('Instagram','Klarys','python3','clarisseum@gmai.com')
         test_cred.save_cred()
-        self.assertEqual(len(Credentials.cred_list),2)  
+        self.assertEqual(len(Credentials.cred_list),2) 
+        
+    def delete_cred_test(self):
+        '''
+        the method tests if we can remove a credential from our credential list
+        '''
+        self.new_cred.save_cred()
+        test_cred = Credentials ('Test','user','password','user@gmail.com')
+        test_cred.save_cred()
+        
+        self.new_cred.delete_cred()
+        self.assertEqual(len(Credentials.cred_list),1)  
         
    
             
