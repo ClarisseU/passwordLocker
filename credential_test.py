@@ -20,6 +20,14 @@ class TestCred(unittest.TestCase):
         self.assertEqual(self.new_cred.password,'python3')
         self.assertEqual(self.new_cred.email,'clarisseum@gmai.com')
         
+    def test_save_cred(self):
+        '''
+        this is a test to check if the account is saved
+        '''
+        
+        self.new_cred.save_cred()
+        self.assertEqual(len(Credentials.cred_list),1)
+        
    
             
         
