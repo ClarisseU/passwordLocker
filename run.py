@@ -43,4 +43,11 @@ def find_user(email):
     '''
     function that finds a user by email and returns the username
     '''
-    return User.find_by_email(email)      
+    return User.find_by_email(email)
+
+def find_cred(username):
+    '''
+    function to find a credential
+    '''
+    return Credentials.find_by_username(username)
+      
