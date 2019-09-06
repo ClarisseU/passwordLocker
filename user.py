@@ -21,4 +21,13 @@ class User:
         '''
         the method helps to delete a user from the user list
         '''
-        User.user_list.remove(self)    
+        User.user_list.remove(self) 
+        
+    @classmethod
+    def find_by_email(cls,email):
+        '''
+        this method helps take the email and returns a username that matches it
+        '''
+        for user in cls.user_list:
+            if user.email == email:
+                return user       
