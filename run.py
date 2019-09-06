@@ -56,4 +56,12 @@ def check_existing_user(username):
     function to check if the user exists
     '''
     return User.user_exist(username)
+
+def check_existing_cred(username):
+    '''
+    function to chexk the existing credentials
+    '''
+    return Credentials.cred_exist(username)
+
+
       
