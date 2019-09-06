@@ -8,6 +8,13 @@ def create_user(username,password,email):
     new_user = User(username,password,email) 
     return new_user 
 
+def create_cred(socialMed,username,password,email):
+    '''
+    function to create a new credential
+    '''
+    new_cred = Credentials(socialMed,username,password,email)
+    return new_cred
+
 def save_user(username):
     '''
     function to save a user
