@@ -19,13 +19,13 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.password,'python3')
         self.assertEqual(self.new_user.email,'clarisseum@gmai.com')
         
-    # def test_save_user(self):
-    #     '''
-    #     this is a test to check if the account is saved
-    #     '''
+    def test_save_user(self):
+        '''
+        this is a test to check if the account is saved
+        '''
         
-    #     self.new_user.save_user()
-    #     self.assertEqual(len(User.user_list),1)
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)
             
         
 if __name__ == '__main__':
