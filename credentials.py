@@ -17,4 +17,10 @@ class Credentials:
         this method saves the credential
         '''
         
-        Credentials.cred_list.append(self)  
+        Credentials.cred_list.append(self) 
+        
+    def delete_cred(self):
+        '''
+        the method helps to delete a user from the user list
+        '''
+        Credentials.cred_list.remove(self)   
