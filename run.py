@@ -76,5 +76,74 @@ def display_creds():
     '''
     return Credentials.display_creds()
 
+def main():
+    print("Welcome to Password Locker. what is your name?")
+    user_name = input()
+    
+    print(f'Hello {user_name}. what would you like to do?')
+    print('\n')
+    
+    while True:
+        print('use these short codes : cu - create a username, du - display usernames, fu - find a username, ex - exit the username list')
+        print('\n')
+        print('or input the following codes for the credentials: cc - create credentials, dc - displays the credentials, fc - find the credential, ex - to exit')
+        short_code = input().lower()
+        
+        if short_code == 'cu':
+            print('New user')
+            print('-'*10)
+            
+            print('user name....')
+            username = input()
+            
+            print('password ....')
+            password = input()
+            
+            print('email ....')
+            email = input()
+            
+            save_user(create_user(username,password,email))
+            print('\n')
+            print(f'new user {username} created')
+            print('\n')
+            
+        elif short_code == 'du' :
+            if display_users():
+                print('Here is a list of all users')
+                print('\n')
+                
+                for user in display_users():
+                    print(f'{user.user_name} ... {user.email}')
+                    print('\n')
+                    
+            else :
+                print('\n')
+                print('there is no saved users')
+                print('\n')
+            
+            
+        elif short_code == 'fu':
+            print('enter the email you want to search for')
+            
+            search_email = input()
+            if check_existing_user(search_email):
+                search_user = find_user(search_email)
+                print(f'{search_user.user_name} {search_user.email}')
+                print('-'*20)
+                print(f'email ....{search_user.email}')
+                
+            else:
+                print('That user does not exist')
+                
+        elif short_code == 'ex':
+            print('Bye....')
+            break
+        else:
+            print('i did not get that. please use the short codes')                        
+            
+if __name__ == '__main__':
+
+    main()            
+
 
       
