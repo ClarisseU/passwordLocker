@@ -70,5 +70,11 @@ def display_users():
     '''
     return User.display_users()
 
+def display_creds():
+    '''
+    function that returns all the saved credentials
+    '''
+    return Credentials.display_creds()
+
 
       
