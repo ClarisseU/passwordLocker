@@ -139,7 +139,70 @@ def main():
             print('Bye....')
             break
         else:
-            print('i did not get that. please use the short codes')                        
+            print('i did not get that. please use the short codes')
+    
+    print(f'Hey {user_name}. would you want to continue and register or check the credentials?')
+    print('\n')
+    
+    while True:
+        print('use these codes : cc - create a credential, dc - display credentials, fc - find a credential, ex - exit the credential list')
+        print('\n')
+        code = input().lower()
+        
+        if code == 'cc':
+            print('New user')
+            print('-'*10)
+            
+            print('enter the social media...')
+            socialMed = input()
+            
+            print('user name....')
+            username = input()
+            
+            print('password ....')
+            password = input()
+            
+            print('email ....')
+            email = input()
+            
+            save_cred(create_cred(socialMed,username,password,email))
+            print('\n')
+            print(f'new credential {username} created')
+            print('\n')
+            
+        elif short_code == 'dc' :
+            if display_creds():
+                print('Here is a list of all credentials')
+                print('\n')
+                
+                for cred in display_creds():
+                    print(f'{cred.socialMed} ... {cred.user_name} ... {cred.email}')
+                    print('\n')
+                    
+            else :
+                print('\n')
+                print('there is no saved credentials')
+                print('\n')
+            
+            
+        elif short_code == 'fd':
+            print('enter the username you want to search for')
+            
+            search_username = input()
+            if check_existing_cred(search_username):
+                search_cred = find_cred(search_username)
+                print(f'{search_cred.socialMed} {search_cred.user_name} {search_cred.email}')
+                print('-'*20)
+                print(f'email ....{search_cred.email}')
+                
+            else:
+                print('That username does not exist')
+                
+        elif short_code == 'ex':
+            print('Bye....')
+            break
+        else:
+            print('i did not get that. please use the codes below')                                     
             
 if __name__ == '__main__':
 
