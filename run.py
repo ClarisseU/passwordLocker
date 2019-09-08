@@ -144,7 +144,7 @@ def main():
                 code = input().lower()
         
                 if code == 'cc':
-                    print('New user')
+                    print('Add a credential')
                     print('-'*10)
             
                     print('enter the social media...')
