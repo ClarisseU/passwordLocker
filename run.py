@@ -68,13 +68,13 @@ def display_users():
     '''
     function that displays all the saved users
     '''
-    return User.display_users()
+    return User.display_user()
 
 def display_creds():
     '''
     function that returns all the saved credentials
     '''
-    return Credentials.display_creds()
+    return Credentials.display_cred()
 
 def main():
     print("Welcome to Password Locker. what is your name?")
@@ -164,13 +164,13 @@ def main():
                     print(f'new credential {username} created')
                     print('\n')
             
-                elif short_code == 'dc' :
+                elif code == 'dc' :
                     if display_creds():
                         print('Here is a list of all credentials')
                         print('\n')
                 
                         for cred in display_creds():
-                            print(f'{cred.socialMed} ... {cred.user_name} ... {cred.email}')
+                            print(f'{cred.socialMed} ... {cred.user_name} ... {cred.password}')
                             print('\n')
                     
                     else :
@@ -179,7 +179,7 @@ def main():
                         print('\n')
             
             
-                elif short_code == 'fd':
+                elif code == 'fd':
                     print('enter the username you want to search for')
             
                     search_username = input()
@@ -192,7 +192,7 @@ def main():
                     else:
                         print('That username does not exist')
                 
-                elif short_code == 'ex':
+                elif code == 'ex':
                     print('Bye....')
                     break
                 else:
