@@ -1,6 +1,23 @@
 #!/usr/bin/env python3
+#!/usr/bin/env python2
 from user import User
 from credentials import Credentials  
+import random
+import string
+
+def randomString(stringLength=10):
+    words = string.ascii_letters
+    return ''.join(random.choice(words) for i in range(stringLength))
+    # print("Random String with the combination of lowercase and uppercase letters")
+    # print ("First Random String is ", randomString(8) )
+    # print ("second Random String is ", randomString(8) )
+
+def create_account(username,password,email):
+    '''
+    function to create an account
+    '''
+    new_user = User(username, password, email)
+    return new_user
   
 def create_user(username,password,email):
     '''
