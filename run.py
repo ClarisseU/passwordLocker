@@ -43,7 +43,7 @@ def save_cred(username):
     '''
     function to save a created credential
     '''
-    username.save_cred    
+    username.save_cred()
     
 def delete_user(username):
     '''
@@ -91,7 +91,7 @@ def display_creds():
     '''
     function that returns all the saved credentials
     '''
-    return Credentials.display_cred()
+    return Credentials.display_creds()
 
 def main():
     print("Welcome to Password Locker. what is your name?")
@@ -138,7 +138,6 @@ def main():
                 print('there is no saved users')
                 print('\n')
             
-            # AttributeError: 'User' object has no attribute 'username'
         elif short_code == 'fu':
             print('enter the email you want to search for')
             
@@ -177,6 +176,7 @@ def main():
                     email = input()
             
                     save_cred(create_cred(socialMed,username,password,email))
+                    print(Credentials.cred_list)
                     print('\n')
                     print(f'new credential {username} created')
                     print('\n')
@@ -196,7 +196,7 @@ def main():
                         print('\n')
             
             
-                elif code == 'fd':
+                elif code == 'fc':
                     print('enter the username you want to search for')
             
                     search_username = input()
@@ -220,6 +220,4 @@ def main():
 if __name__ == '__main__':
 
     main()            
-
-
       
