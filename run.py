@@ -130,7 +130,7 @@ def main():
                 print('\n')
                 
                 for user in display_users():
-                    print(f'{user.user_name} ... {user.email}')
+                    print(f'{user.username} ... {user.email}')
                     print('\n')
                     
             else :
@@ -138,21 +138,21 @@ def main():
                 print('there is no saved users')
                 print('\n')
             
-            
+            # AttributeError: 'User' object has no attribute 'username'
         elif short_code == 'fu':
             print('enter the email you want to search for')
             
             search_email = input()
             if check_existing_user(search_email):
                 search_user = find_user(search_email)
-                print(f'{search_user.user_name} {search_user.email}')
+                print(f'{search_user.username} {search_user.email}')
                 print('-'*20)
                 print(f'email ....{search_user.email}')
                 
-            else:
-                print('That user does not exist')
+            # else:
+            #     print('That user does not exist')
         else:
-            print(f'Hey {user_name}. would you want to continue and register or check the credentials?')
+            print(f'Hey {username}. would you want to continue and register or check the credentials?')
             print('\n')
     
             while True:
@@ -187,7 +187,7 @@ def main():
                         print('\n')
                 
                         for cred in display_creds():
-                            print(f'{cred.socialMed} ... {cred.user_name} ... {cred.password}')
+                            print(f'{cred.socialMed} ... {cred.username} ... {cred.password}')
                             print('\n')
                     
                     else :
@@ -202,7 +202,7 @@ def main():
                     search_username = input()
                     if check_existing_cred(search_username):
                         search_cred = find_cred(search_username)
-                        print(f'{search_cred.socialMed} {search_cred.user_name} {search_cred.email}')
+                        print(f'{search_cred.socialMed} {search_cred.username} {search_cred.email}')
                         print('-'*20)
                         print(f'email ....{search_cred.email}')
                 
