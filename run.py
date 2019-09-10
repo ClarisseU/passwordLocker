@@ -8,9 +8,6 @@ import string
 def randomString(stringLength=10):
     words = string.ascii_letters
     return ''.join(random.choice(words) for i in range(stringLength))
-    # print("Random String with the combination of lowercase and uppercase letters")
-    # print ("First Random String is ", randomString(8) )
-    # print ("second Random String is ", randomString(8) )
 
 def create_account(username,password,email):
     '''
@@ -25,6 +22,7 @@ def create_user(username,password,email):
     '''
     new_user = User(username,password,email) 
     return new_user 
+
 
 def create_cred(socialMed,username,password,email):
     '''
@@ -166,15 +164,23 @@ def main():
             
                     print('user name....')
                     username = input()
-            
-                    print('password ....')
-                    password = input()
+                    
+                    print('Do you want to create your own password or it to be generated automatically')
+                    print("\n")
+                    print('gn for generating the password automatically or cp to create a password')
+                    shrtcd = input()
+                    if shrtcd == 'gn':
+                        print ("your new password is: ", randomString(10) )
+                    else:
+                            
+                        print('password ....')
+                        password = input()
             
                     print('email ....')
                     email = input()
             
                     save_cred(create_cred(socialMed,username,password,email))
-                    print(Credentials.cred_list)
+                    # print(Credentials.cred_list)
                     print('\n')
                     print(f'new credential {username} created')
                     print('\n')
