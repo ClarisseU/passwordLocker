@@ -99,7 +99,7 @@ def main():
     print('\n')
     
     while True:
-        print('use these short codes : cu - create a username, du - display usernames, fu - find a username, ex - exit the username list')
+        print('use these short codes : login - to login if you have an account, cu - create a username, du - display usernames, fu - find a username, ex - exit the username list')
         print('\n')
         print('or input the following codes for the credentials: cc - create credentials, dc - displays the credentials, fc - find the credential, ex - to exit')
         short_code = input().lower()
@@ -145,6 +145,19 @@ def main():
                 print(f'{search_user.username} {search_user.email}')
                 print('-'*20)
                 print(f'email ....{search_user.email}')
+                
+        elif short_code == 'login':
+            print('LOG IN')
+            print('-'*10) 
+            print('\n') 
+            print('enter the username you have created:')
+            username = input()
+            if check_existing_cred(username):
+                searched_username = find_cred(username)   
+                print(f'{searched_username.username}  {searched_username.email}')
+                print('-'*20)
+                print('\n')
+                print('successfully logged in')   
 
         else:
             print(f'Hey {username}. would you want to continue and register or check the credentials?')
@@ -232,7 +245,6 @@ def main():
                     break
                 else:
                     print('i did not get that. please use the codes below')         
-       
                                         
             
 if __name__ == '__main__':
