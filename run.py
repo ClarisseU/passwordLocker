@@ -147,9 +147,7 @@ def main():
                 print(f'{search_user.username} {search_user.email}')
                 print('-'*20)
                 print(f'email ....{search_user.email}')
-                
-            # else:
-            #     print('That user does not exist')
+
         else:
             print(f'Hey {username}. would you want to continue and register or check the credentials?')
             print('\n')
@@ -206,8 +204,6 @@ def main():
                         print('-'*20)
                         print(f'email ....{search_cred.email}')
                 
-                    else:
-                        print('That username does not exist')
                 
                 elif code == 'ex':
                     print('Bye....')
