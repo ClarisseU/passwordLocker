@@ -151,7 +151,7 @@ def main():
             print('\n')
     
             while True:
-                print('use these codes : cc - create a credential, dc - display credentials, fc - find a credential, ex - exit the credential list')
+                print('use these codes : cc - create a credential, dc - display credentials, fc - find a credential, del - delete a credential, ex - exit the credential list')
                 print('\n')
                 code = input().lower()
         
@@ -180,7 +180,6 @@ def main():
                     email = input()
             
                     save_cred(create_cred(socialMed,username,password,email))
-                    # print(Credentials.cred_list)
                     print('\n')
                     print(f'new credential {username} created')
                     print('\n')
@@ -209,6 +208,23 @@ def main():
                         print(f'{search_cred.socialMed} {search_cred.username} {search_cred.email}')
                         print('-'*20)
                         print(f'email ....{search_cred.email}')
+                        
+                elif code == 'del':
+                    print('Deleting a credential')
+                    print('-'*10)
+                    print('\n')
+                    print('enter the username you want to delete')
+                    search_username = input()
+                    
+                    print(check_existing_cred(search_username))
+                    
+                    if check_existing_cred(search_username):
+                        searched_username = find_cred(search_username)
+                        print(f'{searched_username.username}  {searched_username.email}')
+                        print(''*10)
+                        searched_username.delete_cred()
+                        print('credential deleted')
+                                 
                 
                 
                 elif code == 'ex':
